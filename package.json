@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/katzer/cordova-plugin-background-mode.git"
+    "url": "git+https://github.com/nottinhill/cordova-plugin-better-background-mode.git"
   },
   "keywords": [
     "appplant",
@@ -25,17 +25,13 @@
   "engines": [
     {
       "name": "cordova",
-      "version": ">=3.0.0"
-    },
-    {
-      "name": "android-sdk",
-      "version": ">=16"
+      "version": ">=6.0.0"
     }
   ],
-  "author": "Sebastián Katzer",
+  "author": "TruckX Incs",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/katzer/cordova-plugin-background-mode/issues"
+    "url": "https://github.com/truckxinc/cordova-plugin-background-mode/issues"
   },
-  "homepage": "https://github.com/katzer/cordova-plugin-background-mode#readme"
+  "homepage": "https://github.com/truckxinc/cordova-plugin-background-mode"
 }
