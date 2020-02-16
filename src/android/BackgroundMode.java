@@ -26,6 +26,8 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
+import android.util.Log;
+
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -240,11 +242,20 @@ public class BackgroundMode extends CordovaPlugin {
             return;
 
         Intent intent = new Intent(context, ForegroundService.class);
-
+        String TAG = "CordovaPluginBackgroundMode";
         try {
             context.bindService(intent, connection, BIND_AUTO_CREATE);
             fireEvent(Event.ACTIVATE, null);
-            context.startService(intent);
+            if(android.os.Build.VERSION.SDK_INT<android.os.Build.VERSION_CODES.O){
+                context.startService(intent);
+                 Log.d(TAG, "calling OREO Below...!!");
+            } 
+
+            else{
+                context.startForegroundService(intent);
+                 Log.d(TAG, "calling OREO or above...!!");
+            }    
+
         } catch (Exception e) {
             fireEvent(Event.FAILURE, String.format("'%s'", e.getMessage()));
         }
