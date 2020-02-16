@@ -248,12 +248,10 @@ public class BackgroundMode extends CordovaPlugin {
             fireEvent(Event.ACTIVATE, null);
             if(android.os.Build.VERSION.SDK_INT<android.os.Build.VERSION_CODES.O){
                 context.startService(intent);
-                 Log.d(TAG, "calling OREO Below...!!");
             } 
 
             else{
                 context.startForegroundService(intent);
-                 Log.d(TAG, "calling OREO or above...!!");
             }    
 
         } catch (Exception e) {
