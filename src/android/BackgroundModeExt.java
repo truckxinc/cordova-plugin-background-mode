@@ -269,7 +269,7 @@ public class BackgroundModeExt extends CordovaPlugin {
     {
         ActivityManager am = (ActivityManager) getService(ACTIVITY_SERVICE);
 
-        if (am == null || SDK_INT < 21)
+        if (am == null || SDK_INT < 21 || SDK_INT > 27)
             return;
 
         List<AppTask> tasks = am.getAppTasks();
